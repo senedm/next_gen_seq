@@ -11,8 +11,8 @@ def load_the_data(root_path, file_name):
     data = os.path.join(root_path, file_name)
     check = []
 
-    RNA = ['A','C','G','U']
-    DNA = ['A','C','G','T']
+    RNA = ['A','C','G','U'] # bases of RNA
+    DNA = ['A','C','G','T'] # bases of DNA
 
 
     with open(data) as infile:
@@ -20,7 +20,7 @@ def load_the_data(root_path, file_name):
             check.append(line)
 
     if '\n' in check:
-        print('WARNING: The analysis writing could interrupted, it contains new rows')
+        print('WARNING: The analysis writing could be interrupted, it contains new rows')
 
 
     for i in range(len(check[0])-1):
@@ -28,9 +28,10 @@ def load_the_data(root_path, file_name):
             continue
         else:
             print('')
-            print('ERROR: ' + check[0][i] + ' is NOT a base ' + '#' + str(i))
+            print('ERROR: ' + check[0][i] + ' is NOT a base, ' + '#' + str(i))
             print('')
             
     return check
 
 test1 = load_the_data(root_path, file_name)
+    
